@@ -1,6 +1,3 @@
-
-Usage:
-
 ## Flatten an JS object
 
 ```js
