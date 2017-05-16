@@ -14,7 +14,7 @@ Assume `a.js` have the following content:
 {
 	"A": {
 		"C": {
-			"D": [ 'x', 'y', 'z' ],
+			"D": [ "x", "y", "z" ],
 			"E": [ 1, 2, 3 ]
 		}
 	},
