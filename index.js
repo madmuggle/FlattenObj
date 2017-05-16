@@ -6,12 +6,23 @@
 function flattenObjRecursive(idx, obj) {
 	const result = {};
 	for (var x in obj) {
-		if (typeof obj[x] === 'object')
+		if (checkObject(obj[x]))
 			Object.assign(result, flattenObjRecursive(`${idx}.${x}`, obj[x]));
 		else
-			result[`${idx}.${x}`] = obj[x];
+			result[`${idx}.${x}`] = stringify(obj[x]);
 	}
 	return result;
+}
+
+function checkObject(obj) {
+	return typeof obj === 'object' && obj.constructor !== Array;
+}
+
+function stringify(obj) {
+	if (Array.isArray(obj))
+		return obj.map(JSON.stringify).join(",");
+	else
+		return JSON.stringify(obj);
 }
 
 /**
