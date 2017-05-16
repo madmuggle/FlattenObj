@@ -14,11 +14,11 @@ Assume `a.js` have the following content:
 {
 	"A": {
 		"C": {
-			"D": "XXXXXXXX",
-			"E": "YYYYYYYY"
+			"D": [ 'x', 'y', 'z' ],
+			"E": [ 1, 2, 3 ]
 		}
 	},
-	"B": "ZZZZZZZZ"
+	"B": "z"
 }
 ```
 
@@ -33,8 +33,8 @@ cat /tmp/a.json | node flattenJSON.js
 
 The result is:
 ```
-A.C.D: XXXXXXXX
-A.C.E: YYYYYYYY
-B: ZZZZZZZZ
+A.C.D: "x","y","z"
+A.C.E: 1,2,3
+B: "z"
 ```
 
